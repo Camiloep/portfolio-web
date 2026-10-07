@@ -42,7 +42,7 @@ export const personalProjects: Project[] = [
       "Plataforma de pronósticos para el Mundial 2026: ligas privadas, autenticación y tabla de posiciones en tiempo real.",
     stack: ["Next.js", "TypeScript"],
     demo: "https://golazopool.vercel.app/",
-    note: "Código privado",
+    code: "https://github.com/Camiloep/GolazoPool",
     image: "/projects/golazopool.png",
   },
   {
