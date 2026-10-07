@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio — Camilo Estrada Patiño
 
-## Getting Started
+Sitio personal de una sola página: quién soy, experiencia, proyectos, habilidades y contacto.
 
-First, run the development server:
+**En producción:** https://camiloep.vercel.app
+
+![Captura del sitio](docs/screenshot.png)
+
+## Stack
+
+- [Next.js 14](https://nextjs.org/) (App Router) y React 18
+- TypeScript
+- Tailwind CSS
+- Framer Motion para las animaciones de entrada
+- Desplegado en Vercel
+
+## Cómo correrlo
+
+Requiere Node.js 18.17 o superior.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre http://localhost:3000. No necesita variables de entorno.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Otros comandos:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run lint    # ESLint
+npm run build   # build de producción
+npm run start   # sirve el build
+```
 
-## Learn More
+## Estructura
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/
+    layout.tsx            metadatos (título, Open Graph) y fuente
+    page.tsx              la página: hero, sobre mí, experiencia, educación, pie
+    opengraph-image.tsx   imagen que se muestra al compartir el enlace
+  components/
+    Projects.tsx          tarjetas de proyectos
+    Skills.tsx            habilidades agrupadas
+    card.tsx              tarjeta con efecto de brillo
+    Icons/                íconos SVG
+  data/projects.ts        datos de los proyectos
+  styles/globals.css      estilos del brillo y de las partículas
+public/
+  cv-camilo-estrada-patino.pdf
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editar el contenido
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Todo el contenido está escrito a mano en el código, sin llamadas a APIs externas:
 
-## Deploy on Vercel
+- Experiencia, contacto y redes: `src/app/page.tsx`
+- Proyectos: `src/data/projects.ts` (capturas en `public/projects/`, 1280×720)
+- Habilidades: lista `SKILL_GROUPS` en `src/components/Skills.tsx`
+- CV: reemplaza `public/cv-camilo-estrada-patino.pdf`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Accesibilidad
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Encabezados reales (`h1`, `h2`, `h3`) y listas semánticas.
+- Los SVG decorativos llevan `aria-hidden`.
+- Con `prefers-reduced-motion` se ocultan las partículas y se desactivan las animaciones.

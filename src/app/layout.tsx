@@ -1,32 +1,31 @@
 import type { Metadata } from "next";
-import { Inter , Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'], // Puedes ajustar los pesos según tus necesidades
   subsets: ['latin'], // Subconjuntos de caracteres
 });
 
 export const metadata: Metadata = {
-  title: "Camilo Estrada Patiño — Desarrollador de Software",
-  description: "Portfolio de Camilo Estrada Patiño. Desarrollador de software con conocimientos en HTML, CSS, JavaScript, React y TypeScript. Colombia.",
+  title: "Camilo Estrada Patiño — Desarrollador Full Stack",
+  description: "Desarrollador Full Stack en Medellín, Colombia. React, Next.js y TypeScript. 2+ años construyendo un CRM inmobiliario y un sitio web público en producción.",
   metadataBase: new URL("https://camiloep.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Camilo Estrada Patiño — Desarrollador de Software",
-    description: "Portfolio de Camilo Estrada Patiño. Desarrollador de software con conocimientos en HTML, CSS, JavaScript, React y TypeScript. Colombia.",
+    title: "Camilo Estrada Patiño — Desarrollador Full Stack",
+    description: "Desarrollador Full Stack en Medellín, Colombia. React, Next.js y TypeScript. 2+ años construyendo un CRM inmobiliario y un sitio web público en producción.",
     url: "https://camiloep.vercel.app",
     siteName: "Camilo Estrada Patiño",
     locale: "es_CO",
     type: "profile",
   },
   twitter: {
-    card: "summary",
-    title: "Camilo Estrada Patiño — Desarrollador de Software",
-    description: "Portfolio de Camilo Estrada Patiño. Desarrollador de software con conocimientos en HTML, CSS, JavaScript, React y TypeScript.",
+    card: "summary_large_image",
+    title: "Camilo Estrada Patiño — Desarrollador Full Stack",
+    description: "Desarrollador Full Stack en Medellín, Colombia. React, Next.js y TypeScript. 2+ años construyendo un CRM inmobiliario y un sitio web público en producción.",
     creator: "@milosx0818",
   },
   robots: {

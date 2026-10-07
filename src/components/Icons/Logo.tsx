@@ -5,6 +5,8 @@ function Logo() {
   return (
     <div className=''>
     <svg
+      aria-hidden="true"
+      focusable="false"
       width="100"
       height="100"
       viewBox="490 375 1100 900"

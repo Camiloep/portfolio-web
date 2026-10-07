@@ -26,9 +26,9 @@ const GlowArticle: React.FC<Props> = ({ className, children }) => {
   return (
     <article
       data-glow
-      className={`group text-[#E2E2E2] min-h-[200px] blur-effect border-2 border-[#3a3dfe] relative rounded-[24px] h-full ${className}`}
+      className={`group text-[#E2E2E2] blur-effect border-2 border-[#3a3dfe] relative rounded-[24px] h-full ${className}`}
     >
-      <div data-glow></div>
+      <div data-glow aria-hidden="true"></div>
       {children}
     </article>
   );

@@ -4,6 +4,8 @@ interface LinkedInIconProps extends React.SVGProps<SVGSVGElement> {}
 
 const LinkedInIcon: React.FC<LinkedInIconProps> = (props) => (
   <svg
+    aria-hidden="true"
+    focusable="false"
     {...props}
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,9 @@
 interface GitHubLogoProps extends React.SVGProps<SVGSVGElement> {}
 
 const GitHubLogo: React.FC<GitHubLogoProps> = (props) => (
-  <svg 
+  <svg
+    aria-hidden="true"
+    focusable="false" 
     {...props}
     viewBox="0 0 256 250" 
     fill="currentColor" 
