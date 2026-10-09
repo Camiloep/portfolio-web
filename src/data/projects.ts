@@ -53,6 +53,7 @@ export const personalProjects: Project[] = [
       "Aplicación de escritorio para gestionar ventas, compradores, balances e informes imprimibles. Funciona sin conexión.",
     stack: ["Electron", "React", "Tailwind CSS", "SQLite"],
     note: "Código privado",
+    image: "/projects/gesticom.png",
   },
   {
     name: "Proyección financiera",
