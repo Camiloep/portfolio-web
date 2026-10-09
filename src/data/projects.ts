@@ -50,7 +50,7 @@ export const personalProjects: Project[] = [
     period: "2024 – 2025",
     role: "Desarrollé la interfaz y gran parte de la lógica",
     description:
-      "Aplicación de escritorio para gestionar ventas, compradores, balances e informes imprimibles. Funciona sin conexión.",
+      "Aplicación de escritorio para comercializadores de ganado: ventas, compradores, balances e informes imprimibles. Funciona sin conexión y lleva 22 versiones publicadas.",
     stack: ["Electron", "React", "Tailwind CSS", "SQLite"],
     note: "Código privado",
     image: "/projects/gesticom.png",
