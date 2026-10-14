@@ -2,7 +2,6 @@
 
 import { motion, MotionConfig } from 'framer-motion';
 import { Download, Mail } from 'lucide-react';
-import { useState } from 'react';
 
 import GitHubLogo from "@/components/Icons/GitHubLogo";
 import GlowArticle from "@/components/card";
@@ -41,7 +40,7 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-// El correo va al revés y se arma solo al hacer clic: así no queda en el HTML que leen los bots de spam
+// El correo va al revés y se arma solo al hacer clic en Escríbeme: así no queda en el HTML que leen los bots de spam
 const EMAIL_REVERSED = 'se.liamtoh@8180apseac';
 const getEmail = () => EMAIL_REVERSED.split('').reverse().join('');
 const CV_URL = '/cv-camilo-estrada-patino.pdf';
@@ -80,7 +79,6 @@ const sectionTitle = 'text-2xl font-bold pb-3';
 const contactLink = 'inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white underline-offset-4 hover:underline';
 
 export default function Home() {
-  const [email, setEmail] = useState<string | null>(null);
   const writeMe = () => { window.location.href = `mailto:${getEmail()}`; };
 
   return (
@@ -138,17 +136,6 @@ export default function Home() {
                     </a>
                   </div>
                   <ul className="flex flex-wrap gap-x-5 gap-y-2 pt-1">
-                    <li>
-                      {email ? (
-                        <a href={`mailto:${email}`} className={contactLink}>
-                          <Mail size={16} aria-hidden="true" /> {email}
-                        </a>
-                      ) : (
-                        <button type="button" onClick={() => setEmail(getEmail())} className={contactLink}>
-                          <Mail size={16} aria-hidden="true" /> Ver correo
-                        </button>
-                      )}
-                    </li>
                     <li>
                       <a href="https://github.com/Camiloep" target="_blank" rel="noopener noreferrer" className={contactLink}>
                         <GitHubLogo width="16" height="16" /> GitHub
