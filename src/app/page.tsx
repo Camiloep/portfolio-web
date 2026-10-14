@@ -2,6 +2,7 @@
 
 import { motion, MotionConfig } from 'framer-motion';
 import { Download, Mail } from 'lucide-react';
+import { useState } from 'react';
 
 import GitHubLogo from "@/components/Icons/GitHubLogo";
 import GlowArticle from "@/components/card";
@@ -40,7 +41,9 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-const EMAIL = 'caespa0818@hotmail.es';
+// El correo va al revés y se arma solo al hacer clic: así no queda en el HTML que leen los bots de spam
+const EMAIL_REVERSED = 'se.liamtoh@8180apseac';
+const getEmail = () => EMAIL_REVERSED.split('').reverse().join('');
 const CV_URL = '/cv-camilo-estrada-patino.pdf';
 
 const EXPERIENCE = [
@@ -77,6 +80,9 @@ const sectionTitle = 'text-2xl font-bold pb-3';
 const contactLink = 'inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white underline-offset-4 hover:underline';
 
 export default function Home() {
+  const [email, setEmail] = useState<string | null>(null);
+  const writeMe = () => { window.location.href = `mailto:${getEmail()}`; };
+
   return (
     <MotionConfig reducedMotion="user">
       <div className="contenedor">
@@ -116,12 +122,13 @@ export default function Home() {
                     2+ años construyendo un CRM inmobiliario y un sitio web público en producción · Medellín, Colombia
                   </p>
                   <div className="flex flex-wrap gap-3 pt-2">
-                    <a
-                      href={`mailto:${EMAIL}`}
+                    <button
+                      type="button"
+                      onClick={writeMe}
                       className="inline-flex items-center gap-2 rounded-full bg-sky-500 px-5 py-2 font-semibold text-black hover:bg-sky-400 transition-colors"
                     >
                       <Mail size={18} aria-hidden="true" /> Escríbeme
-                    </a>
+                    </button>
                     <a
                       href={CV_URL}
                       download
@@ -132,9 +139,15 @@ export default function Home() {
                   </div>
                   <ul className="flex flex-wrap gap-x-5 gap-y-2 pt-1">
                     <li>
-                      <a href={`mailto:${EMAIL}`} className={contactLink}>
-                        <Mail size={16} aria-hidden="true" /> {EMAIL}
-                      </a>
+                      {email ? (
+                        <a href={`mailto:${email}`} className={contactLink}>
+                          <Mail size={16} aria-hidden="true" /> {email}
+                        </a>
+                      ) : (
+                        <button type="button" onClick={() => setEmail(getEmail())} className={contactLink}>
+                          <Mail size={16} aria-hidden="true" /> Ver correo
+                        </button>
+                      )}
                     </li>
                     <li>
                       <a href="https://github.com/Camiloep" target="_blank" rel="noopener noreferrer" className={contactLink}>
